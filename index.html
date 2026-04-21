@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="theme-color" content="#f9f3e8" />
-  <meta name="description" content="Wedding Invitation of Riya & Anand — 07 May 2026 at Kou Patel Samaj Hall, Valsad, Gujarat." />
+  <meta name="description"
+    content="Wedding Invitation of Riya & Anand — 07 May 2026 at Kou Patel Samaj Hall, Valsad, Gujarat." />
   <title>Riya & Anand — Wedding Invitation</title>
 
   <!-- Preload critical font -->
@@ -12,31 +14,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <style>
     /* =====================
        CSS RESET & BASE
     ===================== */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     :root {
-      --cream:    #faf5eb;
+      --cream: #faf5eb;
       --cream-dark: #f2e9d5;
-      --gold:     #b8860b;
-      --gold-lt:  #d4a843;
-      --rose:     #b5464a;
-      --rose-lt:  #e8a0a3;
-      --text:     #3a2e2e;
-      --text-lt:  #7a6a6a;
-      --white:    #ffffff;
-      --radius:   12px;
-      --shadow:   0 2px 16px rgba(100,60,20,0.1);
+      --gold: #b8860b;
+      --gold-lt: #d4a843;
+      --rose: #b5464a;
+      --rose-lt: #e8a0a3;
+      --text: #3a2e2e;
+      --text-lt: #7a6a6a;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow: 0 2px 16px rgba(100, 60, 20, 0.1);
     }
 
     html {
@@ -53,35 +56,68 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 600;
       line-height: 1.2;
     }
 
-    img { display: block; max-width: 100%; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     /* =====================
        ANIMATIONS (CSS only)
     ===================== */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
 
     @keyframes slideUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .fade-in  { animation: fadeIn  0.6s ease both; }
-    .slide-up { animation: slideUp 0.6s ease both; }
+    .fade-in {
+      animation: fadeIn 0.6s ease both;
+    }
 
-    .delay-1 { animation-delay: 0.15s; }
-    .delay-2 { animation-delay: 0.30s; }
-    .delay-3 { animation-delay: 0.45s; }
+    .slide-up {
+      animation: slideUp 0.6s ease both;
+    }
+
+    .delay-1 {
+      animation-delay: 0.15s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.30s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.45s;
+    }
 
     /* Scroll-reveal: hidden until JS adds .visible */
     .reveal {
@@ -89,6 +125,7 @@
       transform: translateY(20px);
       transition: opacity 0.55s ease, transform 0.55s ease;
     }
+
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
@@ -134,16 +171,18 @@
     ===================== */
     nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      background: rgba(250,245,235,0.92);
+      background: rgba(250, 245, 235, 0.92);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(184,134,11,0.15);
+      border-bottom: 1px solid rgba(184, 134, 11, 0.15);
     }
 
     .nav-brand {
@@ -153,20 +192,52 @@
       font-style: italic;
     }
 
-    .nav-share {
-      background: var(--gold);
-      color: var(--white);
-      border: none;
-      border-radius: 20px;
-      padding: 7px 16px;
-      font-size: 0.8rem;
-      cursor: pointer;
-      font-family: 'Lato', sans-serif;
-      letter-spacing: 0.04em;
-      display: flex;
+    /* PDF Loader Overlay */
+    #pdf-loader {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(42, 26, 26, 0.82);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      flex-direction: column;
       align-items: center;
-      gap: 6px;
-      -webkit-tap-highlight-color: transparent;
+      justify-content: center;
+      gap: 18px;
+      color: var(--white);
+    }
+
+    #pdf-loader.active {
+      display: flex;
+    }
+
+    .pdf-spinner {
+      width: 44px;
+      height: 44px;
+      border: 3px solid rgba(212, 168, 67, 0.25);
+      border-top-color: var(--gold-lt);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .pdf-loader-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold-lt);
+      letter-spacing: 0.06em;
+    }
+
+    .pdf-loader-sub {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.04em;
     }
 
     /* =====================
@@ -238,8 +309,13 @@
       text-align: center;
     }
 
-    #countdown .section-title { color: var(--gold-lt); }
-    #countdown .section-sub   { color: rgba(255,255,255,0.45); }
+    #countdown .section-title {
+      color: var(--gold-lt);
+    }
+
+    #countdown .section-sub {
+      color: rgba(255, 255, 255, 0.45);
+    }
 
     .timer-grid {
       display: flex;
@@ -250,8 +326,8 @@
     }
 
     .timer-box {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(212,168,67,0.25);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(212, 168, 67, 0.25);
       border-radius: 10px;
       padding: 12px 10px 10px;
       min-width: 64px;
@@ -271,7 +347,7 @@
       font-size: 0.65rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255, 255, 255, 0.45);
       margin-top: 6px;
     }
 
@@ -404,10 +480,22 @@
       gap: 10px;
     }
 
-    .gallery-img {
+    /* Landscape photo spans full width */
+    .gallery-landscape {
+      grid-column: 1 / -1;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 10px;
+      background: var(--cream-dark);
+    }
+
+    /* Portrait photo takes one cell, square crop */
+    .gallery-portrait {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
+      object-position: top center;
       border-radius: 10px;
       background: var(--cream-dark);
     }
@@ -531,7 +619,9 @@
       transition: opacity 0.15s;
     }
 
-    .btn:active { opacity: 0.82; }
+    .btn:active {
+      opacity: 0.82;
+    }
 
     .btn-gold {
       background: linear-gradient(135deg, var(--gold), var(--gold-lt));
@@ -564,7 +654,7 @@
     ===================== */
     footer {
       background: linear-gradient(135deg, #2a1a1a, #3d2323);
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       text-align: center;
       padding: 40px 24px 60px;
     }
@@ -600,15 +690,16 @@
 
 <body>
 
+  <!-- =============== PDF LOADER OVERLAY =============== -->
+  <div id="pdf-loader" role="status" aria-live="polite">
+    <div class="pdf-spinner"></div>
+    <div class="pdf-loader-text">Opening Invitation Card…</div>
+    <div class="pdf-loader-sub">This may take a moment</div>
+  </div>
+
   <!-- =============== NAV =============== -->
   <nav>
-    <span class="nav-brand">Riya & Anand</span>
-    <button class="nav-share" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      Share
-    </button>
+    <span class="nav-brand">Riya &amp; Anand</span>
   </nav>
 
 
@@ -677,7 +768,7 @@
           <div class="event-name">Sangeet</div>
           <div class="event-detail">
             Tuesday, 06 May 2026<br>
-            <span class="event-time">06:00 PM onwards</span>
+            <span class="event-time">08:00 PM onwards</span>
           </div>
         </div>
       </div>
@@ -719,15 +810,11 @@
         Titwala Road<br>
         Valsad, Gujarat – 395006
       </p>
-      <a
-        href="https://maps.app.goo.gl/NezQBeuxuShiVUQc9"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-maps"
-        aria-label="Open venue location in Google Maps"
-      >
+      <a href="https://maps.app.goo.gl/NezQBeuxuShiVUQc9" target="_blank" rel="noopener noreferrer" class="btn btn-maps"
+        aria-label="Open venue location in Google Maps">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
         </svg>
         Open Location in Maps
       </a>
@@ -745,18 +832,14 @@
       <p class="pdf-desc">
         Tap below to view our official wedding invitation card
       </p>
-      <a
-        href="Assets/Riya&Anand.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn btn-rose"
-        aria-label="View the wedding invitation PDF"
-      >
+      <button id="open-pdf-btn" class="btn btn-rose" onclick="openPdfWithLoader()"
+        aria-label="View the wedding invitation PDF">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+          <path
+            d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
         </svg>
         View Invitation Card
-      </a>
+      </button>
     </div>
   </section>
 
@@ -767,73 +850,17 @@
     <p class="section-sub reveal">Moments we cherish</p>
 
     <div class="gallery-grid">
-      <div class="gallery-placeholder reveal">
-        📷<span>Photo 1</span>
-      </div>
-      <div class="gallery-placeholder reveal" style="animation-delay:.1s">
-        📷<span>Photo 2</span>
-      </div>
-      <div class="gallery-placeholder reveal" style="animation-delay:.2s">
-        📷<span>Photo 3</span>
-      </div>
-      <div class="gallery-placeholder reveal" style="animation-delay:.3s">
-        📷<span>Photo 4</span>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:0.78rem;color:var(--text-lt);margin-top:14px;">
-      Replace placeholders with actual photos in the <code>assets/</code> folder
-    </p>
-  </section>
+      <!-- Landscape photo — spans full width -->
+      <img src="Assets/Landscape image.jpeg" alt="Riya and Anand — landscape photo" class="gallery-landscape reveal"
+        loading="lazy" decoding="async" />
+      <!-- Portrait photo — left cell -->
+      <img src="Assets/potrait image.jpeg" alt="Riya and Anand — portrait photo" class="gallery-portrait reveal"
+        loading="lazy" decoding="async" />
+      <img src="Assets/potrait 2.jpeg" alt="Riya and Anand — portrait photo" class="gallery-portrait reveal"
+        loading="lazy" decoding="async" />
 
-
-  <!-- =============== 7. RSVP =============== -->
-  <section id="rsvp-section">
-    <h2 class="section-title reveal">RSVP</h2>
-    <p class="section-sub reveal">Let us know you're coming</p>
-
-    <div class="rsvp-form reveal">
-      <div>
-        <label class="form-label" for="rsvp-name">Your Name</label>
-        <input
-          type="text"
-          id="rsvp-name"
-          class="form-input"
-          placeholder="Enter your full name"
-          autocomplete="name"
-        />
-      </div>
-
-      <div>
-        <label class="form-label">Will you attend?</label>
-        <div class="attend-options">
-          <button
-            class="attend-btn"
-            id="btn-yes"
-            onclick="selectAttend('yes')"
-            aria-label="I will attend"
-          >✓ Yes, I'll be there</button>
-          <button
-            class="attend-btn"
-            id="btn-no"
-            onclick="selectAttend('no')"
-            aria-label="I will not attend"
-          >✗ Can't make it</button>
-        </div>
-      </div>
-
-      <button
-        class="btn btn-whatsapp"
-        onclick="sendRsvpWhatsApp()"
-        aria-label="Send RSVP via WhatsApp"
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Send RSVP via WhatsApp
-      </button>
     </div>
   </section>
-
 
   <!-- =============== 8. FOOTER =============== -->
   <footer>
@@ -853,34 +880,34 @@
     (function () {
       var target = new Date('2026-05-07T12:30:00+05:30').getTime();
 
-      var elDays  = document.getElementById('cd-days');
+      var elDays = document.getElementById('cd-days');
       var elHours = document.getElementById('cd-hours');
-      var elMins  = document.getElementById('cd-mins');
-      var elSecs  = document.getElementById('cd-secs');
+      var elMins = document.getElementById('cd-mins');
+      var elSecs = document.getElementById('cd-secs');
 
       function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
       function tick() {
-        var now  = Date.now();
+        var now = Date.now();
         var diff = target - now;
 
         if (diff <= 0) {
-          elDays.textContent  = '00';
+          elDays.textContent = '00';
           elHours.textContent = '00';
-          elMins.textContent  = '00';
-          elSecs.textContent  = '00';
+          elMins.textContent = '00';
+          elSecs.textContent = '00';
           return;
         }
 
-        var days  = Math.floor(diff / 86400000);
+        var days = Math.floor(diff / 86400000);
         var hours = Math.floor((diff % 86400000) / 3600000);
-        var mins  = Math.floor((diff % 3600000)  / 60000);
-        var secs  = Math.floor((diff % 60000)    / 1000);
+        var mins = Math.floor((diff % 3600000) / 60000);
+        var secs = Math.floor((diff % 60000) / 1000);
 
-        elDays.textContent  = pad(days);
+        elDays.textContent = pad(days);
         elHours.textContent = pad(hours);
-        elMins.textContent  = pad(mins);
-        elSecs.textContent  = pad(secs);
+        elMins.textContent = pad(mins);
+        elSecs.textContent = pad(secs);
       }
 
       tick();
@@ -919,40 +946,31 @@
     function selectAttend(val) {
       attendChoice = val;
       var btnYes = document.getElementById('btn-yes');
-      var btnNo  = document.getElementById('btn-no');
+      var btnNo = document.getElementById('btn-no');
       btnYes.className = 'attend-btn' + (val === 'yes' ? ' selected-yes' : '');
-      btnNo.className  = 'attend-btn' + (val === 'no'  ? ' selected-no'  : '');
+      btnNo.className = 'attend-btn' + (val === 'no' ? ' selected-no' : '');
+      // Show confirmation
+      var confirm = document.getElementById('rsvp-confirm');
+      if (confirm) confirm.style.display = 'block';
     }
 
-    /* ---- 4. RSVP WHATSAPP ---- */
-    function sendRsvpWhatsApp() {
-      var name    = (document.getElementById('rsvp-name').value || '').trim();
-      var attend  = attendChoice;
-
-      if (!name) {
-        alert('Please enter your name before sending.');
-        return;
-      }
-
-      var msg;
-      if (attend === 'yes') {
-        msg = 'Hi! I am ' + name + '. I will be attending Riya & Anand\'s wedding on 07 May 2026. 💍';
-      } else if (attend === 'no') {
-        msg = 'Hi! I am ' + name + '. Unfortunately I won\'t be able to attend Riya & Anand\'s wedding. Wishing them lots of love! ❤️';
-      } else {
-        msg = 'Hi! I am ' + name + '. I received the invitation for Riya & Anand\'s wedding on 07 May 2026.';
-      }
-
-      var url = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(msg);
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
-
-    /* ---- 5. SHARE ON WHATSAPP (top nav button) ---- */
-    function shareOnWhatsApp() {
-      var text = '🌸 You are cordially invited to the wedding of *Riya & Anand* on *7 May 2026* at Kou Patel Samaj Hall, Valsad, Gujarat.\n\n✨ View the full invitation here: ' + window.location.href;
-      window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
+    /* ---- 4. PDF LOADER ---- */
+    function openPdfWithLoader() {
+      var loader = document.getElementById('pdf-loader');
+      loader.classList.add('active');
+      // Open PDF in new tab
+      var win = window.open('Assets/Riya&Anand.pdf', '_blank', 'noopener,noreferrer');
+      // Hide loader after 3s (enough for browser to start loading)
+      setTimeout(function () {
+        loader.classList.remove('active');
+      }, 3000);
+      // Also hide if user taps overlay
+      loader.onclick = function () {
+        loader.classList.remove('active');
+      };
     }
   </script>
 
 </body>
+
 </html>
